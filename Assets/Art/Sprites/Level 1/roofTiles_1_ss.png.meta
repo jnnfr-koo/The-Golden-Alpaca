@@ -4,43 +4,43 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 7660257596671952248
-    second: roofTiles_1_0
+    second: roofTiles_1_ss_0
   - first:
       213: 1064603164826079249
-    second: roofTiles_1_1
+    second: roofTiles_1_ss_1
   - first:
       213: 2495743296494418576
-    second: roofTiles_1_2
+    second: roofTiles_1_ss_2
   - first:
       213: 8617369179943529277
-    second: roofTiles_1_3
+    second: roofTiles_1_ss_3
   - first:
       213: 3354121897417089327
-    second: roofTiles_1_4
+    second: roofTiles_1_ss_4
   - first:
       213: -1490602162821108392
-    second: roofTiles_1_5
+    second: roofTiles_1_ss_5
   - first:
       213: -2147502846992592982
-    second: roofTiles_1_6
+    second: roofTiles_1_ss_6
   - first:
       213: -3818636017869669072
-    second: roofTiles_1_7
+    second: roofTiles_1_ss_7
   - first:
       213: 965000877806595751
-    second: roofTiles_1_8
+    second: roofTiles_1_ss_8
   - first:
       213: -6434929795502504126
-    second: roofTiles_1_9
+    second: roofTiles_1_ss_9
   - first:
       213: -3391629023162104130
-    second: roofTiles_1_10
+    second: roofTiles_1_ss_10
   - first:
       213: -6293674390338945842
-    second: roofTiles_1_11
+    second: roofTiles_1_ss_11
   - first:
       213: 6961641345876670178
-    second: roofTiles_1_12
+    second: roofTiles_1_ss_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: roofTiles_1_0
+      name: roofTiles_1_ss_0
       rect:
         serializedVersion: 2
         x: 0
@@ -134,7 +134,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,7 +147,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roofTiles_1_1
+      name: roofTiles_1_ss_1
       rect:
         serializedVersion: 2
         x: 32
@@ -155,7 +155,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,7 +168,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roofTiles_1_2
+      name: roofTiles_1_ss_2
       rect:
         serializedVersion: 2
         x: 64
@@ -176,7 +176,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,7 +189,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roofTiles_1_3
+      name: roofTiles_1_ss_3
       rect:
         serializedVersion: 2
         x: 96
@@ -197,7 +197,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,7 +210,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roofTiles_1_4
+      name: roofTiles_1_ss_4
       rect:
         serializedVersion: 2
         x: 0
@@ -218,7 +218,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,7 +231,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roofTiles_1_5
+      name: roofTiles_1_ss_5
       rect:
         serializedVersion: 2
         x: 32
@@ -239,7 +239,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -252,7 +252,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roofTiles_1_6
+      name: roofTiles_1_ss_6
       rect:
         serializedVersion: 2
         x: 64
@@ -260,7 +260,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,7 +273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roofTiles_1_7
+      name: roofTiles_1_ss_7
       rect:
         serializedVersion: 2
         x: 96
@@ -281,7 +281,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -294,7 +294,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roofTiles_1_8
+      name: roofTiles_1_ss_8
       rect:
         serializedVersion: 2
         x: 0
@@ -302,7 +302,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -315,7 +315,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roofTiles_1_9
+      name: roofTiles_1_ss_9
       rect:
         serializedVersion: 2
         x: 32
@@ -323,7 +323,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -336,7 +336,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roofTiles_1_10
+      name: roofTiles_1_ss_10
       rect:
         serializedVersion: 2
         x: 64
@@ -344,7 +344,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -357,7 +357,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roofTiles_1_11
+      name: roofTiles_1_ss_11
       rect:
         serializedVersion: 2
         x: 96
@@ -365,7 +365,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -378,7 +378,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roofTiles_1_12
+      name: roofTiles_1_ss_12
       rect:
         serializedVersion: 2
         x: 0
@@ -386,7 +386,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
