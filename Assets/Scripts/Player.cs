@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    PlayerMovement movementControls;
+
+    Rigidbody rb;
+
 
     void Start()
     {
-        movementControls = new PlayerMovement();
+        
     }
 
     void Update()
     {
         
     }
+
+
 }
