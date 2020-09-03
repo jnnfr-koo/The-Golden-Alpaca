@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     Rigidbody rb;
     const float _maxspeed = 10.0f;
 
@@ -16,9 +15,11 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
-        float verticalMovement = rb.velocity.z;
-        float horizontalMovement = rb.velocity.x;
+        rb.velocity = MovementDiretion(rb.velocity.z, rb.velocity.x);
+    }
 
+    Vector3 MovementDiretion(float verticalMovement, float horizontalMovement)
+    {
         if (Input.GetAxisRaw("Vertical") != 0.0f)
         {
             verticalMovement = (_maxspeed * Input.GetAxisRaw("Vertical"));
@@ -37,6 +38,6 @@ public class PlayerMovement : MonoBehaviour
             horizontalMovement = 0.0f;
         }
 
-        rb.velocity = new Vector3(horizontalMovement, 0, verticalMovement);
+        return new Vector3(horizontalMovement, 0, verticalMovement);
     }
 }
