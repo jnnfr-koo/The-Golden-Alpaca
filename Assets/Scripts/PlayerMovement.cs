@@ -11,10 +11,10 @@ public class PlayerMovement
         Speed = speed;
     }
 
-    public Vector3 CalculateMovement(float verticalMovement, float horizontalMovement, float DeltaTime)
+    public Vector3 CalculateMovement(float verticalMovement, float horizontalMovement)
     {
-        float x = verticalMovement * Speed * DeltaTime;
-        float z = horizontalMovement * Speed * DeltaTime;
+        float x = verticalMovement * Speed;
+        float z = horizontalMovement * Speed;
 
         return new Vector3(horizontalMovement, 0, verticalMovement);
     }

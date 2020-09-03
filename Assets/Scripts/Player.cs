@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float MaxSpeed;
-    public PlayerMovement Movement;
+    public float maxSpeed;
+    public PlayerMovement movement;
+
+    public Rigidbody rb;
 
     void Start()
     {
-        Movement = new PlayerMovement(MaxSpeed);
+        movement = new PlayerMovement(maxSpeed);
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        transform.position += Movement.CalculateMovement(
+        rb.velocity = movement.CalculateMovement(
             Input.GetAxisRaw("Vertical"),
-            Input.GetAxisRaw("Horizontal"),
-            Time.deltaTime);
+            Input.GetAxisRaw("Horizontal"));
     }
 
 
