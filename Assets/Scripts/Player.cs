@@ -13,6 +13,11 @@ public class Player : MonoBehaviour
     {
         movement = new PlayerMovement(maxSpeed);
         rb = GetComponent<Rigidbody>();
+    PlayerMovement movementControls;
+
+    void Start()
+    {
+        movementControls = new PlayerMovement();
     }
 
     void Update()
