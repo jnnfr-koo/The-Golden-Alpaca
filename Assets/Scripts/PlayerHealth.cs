@@ -8,23 +8,30 @@ using Image = UnityEngine.UI.Image;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [Header("Health Stats")]
     public float maxHealth;
     public float currentHealth;
-
+    
+    [Header("Heart Assets")]
     public GameObject heartStorage;
-    public Sprite[] healthSprites;
+    public GameObject heartPrefab;
+    [Space]
+    public Sprite emptyHeart;
+    public Sprite halfHeart;
+    public Sprite fullHeart;
+
+    [SerializeField]
+    private ArrayList hearts = new ArrayList();
+    //private float healthIncrement = 0.5f;
 
     // Start is called before the first frame update
     void Start()
     {
         maxHealth = 3;
-        healthSprites = new Sprite[(int) maxHealth];
-        for (int i = 0; i < 1; i++)
+
+        for (int i = 0; i < maxHealth; i++)
         {
-            //TODO: Add heart sprites dynamically to GUI
-            //Image image = gameObject.AddComponent<Image>();
-            //image.sprite = healthSprites[0];
-            //image.transform.SetParent(heartStorage.transform, false);
+            hearts.Add(Instantiate(heartPrefab, heartStorage.transform));
         }
         currentHealth = maxHealth;
     }
@@ -32,13 +39,13 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Plus))
+        if (Input.GetKeyDown(KeyCode.Plus)) //Increase health by one half
         {
-            //TODO: Increase health by 1
+            currentHealth += 0.5f;
         }
-        else if (Input.GetKeyDown(KeyCode.Minus))
+        else if (Input.GetKeyDown(KeyCode.Minus)) //Decrease health by one half
         {
-            //TODO: Decrease health by 1
+            currentHealth -= 0.5f;
         }
     }
 }
