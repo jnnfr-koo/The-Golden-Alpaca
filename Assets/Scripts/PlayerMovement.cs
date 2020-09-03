@@ -2,41 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement
 {
-    Rigidbody rb;
-    const float _maxspeed = 10.0f;
+    public float Speed;
 
-    void Start()
+    public PlayerMovement(float speed)
     {
-        rb = GetComponent<Rigidbody>();
+        Speed = speed;
     }
 
-    
-    void Update()
+    public Vector3 CalculateMovement(float verticalMovement, float horizontalMovement, float DeltaTime)
     {
-        rb.velocity = MovementDiretion(rb.velocity.z, rb.velocity.x);
-    }
-
-    Vector3 MovementDiretion(float verticalMovement, float horizontalMovement)
-    {
-        if (Input.GetAxisRaw("Vertical") != 0.0f)
-        {
-            verticalMovement = (_maxspeed * Input.GetAxisRaw("Vertical"));
-        }
-        else
-        {
-            verticalMovement = 0.0f;
-        }
-
-        if (Input.GetAxisRaw("Horizontal") != 0.0f)
-        {
-            horizontalMovement = (_maxspeed * Input.GetAxisRaw("Horizontal"));
-        }
-        else
-        {
-            horizontalMovement = 0.0f;
-        }
+        float x = verticalMovement * Speed * DeltaTime;
+        float z = horizontalMovement * Speed * DeltaTime;
 
         return new Vector3(horizontalMovement, 0, verticalMovement);
     }
