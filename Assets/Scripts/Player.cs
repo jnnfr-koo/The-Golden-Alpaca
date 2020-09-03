@@ -13,11 +13,6 @@ public class Player : MonoBehaviour
     {
         movement = new PlayerMovement(maxSpeed);
         rb = GetComponent<Rigidbody>();
-    PlayerMovement movementControls;
-
-    void Start()
-    {
-        movementControls = new PlayerMovement();
     }
 
     void Update()
@@ -26,6 +21,4 @@ public class Player : MonoBehaviour
             Input.GetAxisRaw("Vertical"),
             Input.GetAxisRaw("Horizontal"));
     }
-
-
 }
