@@ -19,20 +19,14 @@ public class PlayerHealth : MonoBehaviour
     public GameObject halfHeart;
     public GameObject fullHeart;
 
-    private float healthIncrement = 0.5f;
+    private readonly float healthIncrement = 0.5f;
 
     // Start is called before the first frame update
     void Start()
     {
         maxHealth = 3;
-
-        for (int i = 0; i < maxHealth; i++)
-        {
-            Instantiate(emptyHeart, heartStorage.transform);
-        }
-
         currentHealth = maxHealth;
-        updateHealth();
+        UpdateHealth();
     }
 
     // Update is called once per frame
@@ -41,43 +35,55 @@ public class PlayerHealth : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow)) //Increase health by one half
         {
             currentHealth += healthIncrement;
-            updateHealth();
+            UpdateHealth();
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow)) //Decrease health by one half
         {
             currentHealth -= healthIncrement;
-            updateHealth();
+            UpdateHealth();
         }
     }
 
-    private void updateHealth()
+    private void UpdateHealth()
     {
         if (currentHealth > maxHealth) //Check if health goes over max health
         {
-            currentHealth = maxHealth;
+            currentHealth = maxHealth; //Don't allow health overflow
         }
         else
         {
-            foreach (Transform heart in transform)
+            foreach (Transform heart in transform) //Remove all heart prefabs from the Heart Storage
             {
                 Destroy(heart.gameObject);
             }
 
-            //TODO: Allow for multiple empty hearts
-            for (int i = 0; i < maxHealth; i++)
+            for (int i = 0; i < maxHealth; i++) //Instantiate heart prefabs
             {
-                if ((currentHealth > i) && (currentHealth < i + 1))
-                {
-                    Instantiate(halfHeart, heartStorage.transform);
-                }
-                else if (currentHealth == i)
-                {
-                    Instantiate(emptyHeart, heartStorage.transform);
-                }
-                else
+                if (currentHealth == i + 1)
                 {
                     Instantiate(fullHeart, heartStorage.transform);
                 }
+                else if (currentHealth > i)
+                {
+                    if (currentHealth < (i + 1))
+                    {
+                        Instantiate(halfHeart, heartStorage.transform);
+                    }
+                    else
+                    {
+                        Instantiate(fullHeart, heartStorage.transform);
+                    }
+                }
+                else
+                {
+                    Instantiate(emptyHeart, heartStorage.transform);
+                }
+            }
+
+            if (currentHealth <= 0.0f) //Check if player is dead
+            {
+                currentHealth = 0.0f;
+                Debug.Log("Game over");
             }
         }
     }
