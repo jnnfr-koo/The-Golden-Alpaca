@@ -537,11 +537,9 @@ MonoBehaviour:
   maxHealth: 0
   currentHealth: 0
   heartStorage: {fileID: 1239554133}
-  heartPrefab: {fileID: 4119967270801098288, guid: 76790d3bd2f1f3b4b93abf9b2169eb23,
+  emptyHeart: {fileID: 4119967270801098288, guid: 76790d3bd2f1f3b4b93abf9b2169eb23,
     type: 3}
-  emptyHeart: {fileID: 7629762824359874004, guid: 5cba0a78fb37f8c4db3eb1e06fafcd8f,
+  halfHeart: {fileID: 7857902078775631580, guid: c27bd1791ab778343bf52235b5f5a252,
     type: 3}
-  halfHeart: {fileID: 3666854827408518169, guid: 5cba0a78fb37f8c4db3eb1e06fafcd8f,
-    type: 3}
-  fullHeart: {fileID: -3590457070835178794, guid: 5cba0a78fb37f8c4db3eb1e06fafcd8f,
+  fullHeart: {fileID: 4589217381581002406, guid: 27aef8e9c9bb4254592f3eaeb14735e8,
     type: 3}
