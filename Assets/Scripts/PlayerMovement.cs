@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     Rigidbody rb;
-    const float _maxspeed = 10.0f;
+    public float _maxspeed;
 
     private void Start()
     {
@@ -15,32 +15,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        CalculateMovement();
+        rb.velocity = CalculateMovement();
     }
 
-    public void CalculateMovement()
+    public Vector3 CalculateMovement()
     {
         float verticalMovement = rb.velocity.z;
         float horizontalMovement = rb.velocity.x;
 
-        if (Input.GetAxisRaw("Vertical") != 0.0f)
-        {
-            verticalMovement = (_maxspeed * Input.GetAxisRaw("Vertical"));
-        }
-        else
-        {
-            verticalMovement = 0.0f;
-        }
+        
+        verticalMovement = (_maxspeed * Input.GetAxisRaw("Vertical"));
+        
+        horizontalMovement = (_maxspeed * Input.GetAxisRaw("Horizontal"));
+        
 
-        if (Input.GetAxisRaw("Horizontal") != 0.0f)
-        {
-            horizontalMovement = (_maxspeed * Input.GetAxisRaw("Horizontal"));
-        }
-        else
-        {
-            horizontalMovement = 0.0f;
-        }
-
-        rb.velocity = new Vector3(horizontalMovement, 0, verticalMovement);
+        return new Vector3(horizontalMovement, 0, verticalMovement);
     }
 }
