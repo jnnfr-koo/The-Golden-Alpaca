@@ -42,6 +42,11 @@ public class PlayerHealth : MonoBehaviour
             currentHealth -= healthIncrement;
             UpdateHealth();
         }
+
+        if (currentHealth <= 0.5f)
+        {
+
+        }
     }
 
     private void UpdateHealth()
