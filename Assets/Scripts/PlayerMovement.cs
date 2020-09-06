@@ -5,30 +5,27 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    Rigidbody rb;
+    public Rigidbody rb;
     public float _maxspeed;
+    public Vector3 movement;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        rb.velocity = CalculateMovement();
+        movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
     }
 
-    public Vector3 CalculateMovement()
+    private void FixedUpdate()
     {
-        float verticalMovement = rb.velocity.z;
-        float horizontalMovement = rb.velocity.x;
+        rb.velocity = CalculateMovement(movement);
+    }
 
-        
-        verticalMovement = _maxspeed * Input.GetAxisRaw("Vertical");
-        
-        horizontalMovement = (_maxspeed * Input.GetAxisRaw("Horizontal"));
-        
-
-        return new Vector3(horizontalMovement, 0, verticalMovement);
+    public Vector3 CalculateMovement(Vector3 direction)
+    {   
+        return direction * _maxspeed;
     }
 }
