@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         rb.velocity = CalculateMovement();
     }
@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         float horizontalMovement = rb.velocity.x;
 
         
-        verticalMovement = (_maxspeed * Input.GetAxisRaw("Vertical"));
+        verticalMovement = _maxspeed * Input.GetAxisRaw("Vertical");
         
         horizontalMovement = (_maxspeed * Input.GetAxisRaw("Horizontal"));
         
