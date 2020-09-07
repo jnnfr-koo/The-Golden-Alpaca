@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
      * movement: Holds new input direction from user to move to.
      */
     public Rigidbody rb;
-    public float maxspeed;
+    public float maxspeed = 10.0f;
     public Vector3 movement;
 
     private void Start()
@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = CalculateMovement(movement);
     }
 
+    // Calculates the speed in which the character is going in.
     public Vector3 CalculateMovement(Vector3 direction)
     {   
         return direction * maxspeed;
