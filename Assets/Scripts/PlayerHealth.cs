@@ -18,6 +18,10 @@ public class PlayerHealth : MonoBehaviour
     public GameObject emptyHeart;
     public GameObject halfHeart;
     public GameObject fullHeart;
+    public GameObject lastHalfHeart;
+
+    [Header("Game Over Assets")]
+    public GameObject gameOverText;
 
     private readonly float healthIncrement = 0.5f;
 
@@ -42,11 +46,6 @@ public class PlayerHealth : MonoBehaviour
             currentHealth -= healthIncrement;
             UpdateHealth();
         }
-
-        if (currentHealth <= 0.5f)
-        {
-
-        }
     }
 
     private void UpdateHealth()
@@ -61,7 +60,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 Destroy(heart.gameObject);
             }
-
+            
             for (int i = 0; i < maxHealth; i++) //Instantiate heart prefabs
             {
                 if (currentHealth == i + 1)
@@ -72,7 +71,14 @@ public class PlayerHealth : MonoBehaviour
                 {
                     if (currentHealth < (i + 1))
                     {
-                        Instantiate(halfHeart, heartStorage.transform);
+                        if (currentHealth == 0.5f)
+                        {
+                            Instantiate(lastHalfHeart, heartStorage.transform);
+                        }
+                        else
+                        {
+                            Instantiate(halfHeart, heartStorage.transform);
+                        }
                     }
                     else
                     {
@@ -88,7 +94,9 @@ public class PlayerHealth : MonoBehaviour
             if (currentHealth <= 0.0f) //Check if player is dead
             {
                 currentHealth = 0.0f;
-                Debug.Log("Game over");
+                //Create Game Over Text in parent object (Script is attached to Heart Storage object, child of Canvas)
+                Instantiate(gameOverText, transform.parent.gameObject.transform);
+                Destroy(this); //Removes PlayerHealth script
             }
         }
     }
