@@ -14,9 +14,12 @@ public class PlayerMovement : MonoBehaviour
     public float maxspeed = 10.0f;
     public Vector3 movement;
 
+    public Move moveTest;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        moveTest = new Move(maxspeed);
     }
 
     private void Update()
@@ -28,12 +31,6 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         // Call method to add new vector to the speed of the player.
-        rb.velocity = CalculateMovement(movement);
-    }
-
-    // Calculates the speed in which the character is going in.
-    public Vector3 CalculateMovement(Vector3 direction)
-    {   
-        return direction * maxspeed;
+        rb.velocity = moveTest.CalculateMovement(movement);
     }
 }
