@@ -14,16 +14,26 @@ public class Player : MonoBehaviour
 
     public Move moveTest;
 
+    private IMovementService movementService;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         moveTest = new Move(maxspeed);
+
+        if (movementService == null)
+        {
+            movementService = new MovementService();
+        }
     }
 
     private void Update()
     {
         // Get player input for new direction, and store it.
-        movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        movement = new Vector3(
+            movementService.GetAxisRaw("Horizontal"),
+            0,
+            movementService.GetAxisRaw("Vertical"));
     }
 
     private void FixedUpdate()
