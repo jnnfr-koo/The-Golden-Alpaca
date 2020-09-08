@@ -8,21 +8,16 @@ namespace Tests
 {
     public class MovementTests
     {
-        // A Test behaves as an ordinary method
+        // Tests the method to calculate the new Vector based on an inputed vector and the speed.
         [Test]
-        public void MovementTestsSimplePasses()
+        public void Calculate_Vector_Dircetion_And_Speed()
         {
-            // Use the Assert class to test conditions
-        }
+            float speed = 10.0f;
+            Move movement = new Move(speed);
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        [UnityTest]
-        public IEnumerator MovementTestsWithEnumeratorPasses()
-        {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            yield return null;
+            Vector3 direction = new Vector3(1, 0, 0);
+
+            Assert.AreEqual(new Vector3(10, 0, 0), movement.CalculateMovement(direction));
         }
     }
 }
