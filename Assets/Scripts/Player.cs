@@ -10,16 +10,16 @@ public class Player : MonoBehaviour
      */
     public Rigidbody rb;
     public float maxspeed = 10.0f;
-    public Vector3 movement;
+    public Vector3 newPosition;
 
-    public Move moveTest;
+    public PlayerMovement movement;
 
     private IMovementService movementService;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        moveTest = new Move(maxspeed);
+        movement = new PlayerMovement(maxspeed);
 
         if (movementService == null)
         {
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         // Get player input for new direction, and store it.
-        movement = new Vector3(
+        newPosition = new Vector3(
             movementService.GetAxisRaw("Horizontal"),
             0,
             movementService.GetAxisRaw("Vertical"));
@@ -39,6 +39,6 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         // Call method to add new vector to the speed of the player.
-        rb.velocity = moveTest.CalculateMovement(movement);
+        rb.velocity = movement.CalculateMovement(newPosition);
     }
 }

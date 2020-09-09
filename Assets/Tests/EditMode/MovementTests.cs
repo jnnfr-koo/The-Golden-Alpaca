@@ -13,7 +13,7 @@ namespace Tests
         public void Calculate_Vector_Dircetion_And_Speed()
         {
             float speed = 10.0f;
-            Move movement = new Move(speed);
+            PlayerMovement movement = new PlayerMovement(speed);
 
             Vector3 direction = new Vector3(1, 0, 0);
 

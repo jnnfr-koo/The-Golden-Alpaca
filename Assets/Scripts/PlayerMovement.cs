@@ -2,35 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/**
- * Class to control player movement throughout levels.
- */
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement
 {
-    /*
-     * movement: Holds new input direction from user to move to.
-     */
-    public Rigidbody rb;
-    public float maxspeed = 10.0f;
-    public Vector3 movement;
+    public float maxspeed { get; set; }
 
-    public Move moveTest;
-
-    private void Start()
+    public PlayerMovement(float maxspeed)
     {
-        rb = GetComponent<Rigidbody>();
-        moveTest = new Move(maxspeed);
+        this.maxspeed = maxspeed;
     }
 
-    private void Update()
+    // Calculates the speed in which the character is going in.
+    public Vector3 CalculateMovement(Vector3 direction)
     {
-        // Get player input for new direction, and store it.
-        movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-    }
-
-    private void FixedUpdate()
-    {
-        // Call method to add new vector to the speed of the player.
-        rb.velocity = moveTest.CalculateMovement(movement);
+        return direction * maxspeed;
     }
 }
