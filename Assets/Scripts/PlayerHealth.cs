@@ -96,7 +96,7 @@ public class PlayerHealth : MonoBehaviour
                 currentHealth = 0.0f;
                 //Create Game Over Text in parent object (Script is attached to Heart Storage object, child of Canvas)
                 Instantiate(gameOverText, transform.parent.gameObject.transform);
-                Destroy(this); //Removes PlayerHealth script
+                this.enabled = false; //Disable this script
             }
         }
     }

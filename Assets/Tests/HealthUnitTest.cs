@@ -20,7 +20,7 @@ namespace Tests
         }
 
         [Test]
-        public void IInstantiateHalfHeartObject()
+        public void InstantiateHalfHeartObject()
         {
             GameObject halfHeart = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Health/Half Heart"));
             Assert.IsNotNull(halfHeart, "Half Heart Instantialized");
