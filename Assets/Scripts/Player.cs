@@ -8,13 +8,13 @@ public class Player : MonoBehaviour
     /*
      * movement: Holds new input direction from user to move to.
      */
-    public Rigidbody rb;
-    public float maxspeed = 10.0f;
-    public Vector3 newPosition;
-
-    public PlayerMovement movement;
-
+    private Rigidbody rb;
+    private PlayerMovement movement;
     private IMovementService movementService;
+    private Vector3 newPosition;
+
+    [SerializeField]
+    private float maxspeed = 10.0f;
 
     private void Start()
     {
