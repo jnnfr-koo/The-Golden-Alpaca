@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public float currentHealth;
 
     [Header("Heart Assets")]
+    public GameObject canvas;
     public GameObject heartStorage;
     [Space]
     public GameObject emptyHeart;
@@ -22,6 +23,8 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("Game Over Assets")]
     public GameObject gameOverText;
+    
+    private Status status;
 
     private readonly float healthIncrement = 0.5f;
 
@@ -31,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
         maxHealth = 3;
         currentHealth = maxHealth;
         UpdateHealth();
+        status = canvas.GetComponent<Status>();
     }
 
     // Update is called once per frame
@@ -94,6 +98,7 @@ public class PlayerHealth : MonoBehaviour
             if (currentHealth <= 0.0f) //Check if player is dead
             {
                 currentHealth = 0.0f;
+                status.UpdateText("Dead"); //Update health status text
                 //Create Game Over Text in parent object (Script is attached to Heart Storage object, child of Canvas)
                 Instantiate(gameOverText, transform.parent.gameObject.transform);
                 this.enabled = false; //Disable this script
