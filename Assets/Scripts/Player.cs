@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
      */
     private Rigidbody rb;
     private PlayerMovement movement;
-    private IMovementService movementService;
     private Vector3 newPosition;
 
     [SerializeField]
@@ -20,20 +19,15 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         movement = new PlayerMovement(maxspeed);
-
-        if (movementService == null)
-        {
-            movementService = new MovementService();
-        }
     }
 
     private void Update()
     {
         // Get player input for new direction, and store it.
         newPosition = new Vector3(
-            movementService.GetAxisRaw("Horizontal"),
+            Input.GetAxisRaw("Horizontal"),
             0,
-            movementService.GetAxisRaw("Vertical"));
+            Input.GetAxisRaw("Vertical"));
     }
 
     private void FixedUpdate()
